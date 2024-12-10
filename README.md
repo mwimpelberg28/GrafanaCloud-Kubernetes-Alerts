@@ -9,6 +9,8 @@ This repository provides Terraform code to deploy default Kubernetes alerts for 
   - **Pod health**
   - **Daemonset health**
   - **StatefulSet health**
+  - **Kubelet health**
+  - **Kubelet storage health**
 
 - Customizable thresholds for alert rules.
 - Supports integration with Alertmanager for notifications.
@@ -37,4 +39,16 @@ cd kubernetes-alerts-terraform
 ```bash
 terraform init
 terraform apply
+```
+
+# Notes
+
+> **Note:** These metrics are duplicated in the data source managed alerts with different thresholds.  Grafana managed alerts don't allow duplicate names for metrics.
+
+```bash
+KubePersistentVolumeFillingUp
+KubePersistentVolumeInodesFillingUp
+KubeClientCertificateExpiration
+KubeletClientCertificateExpiration
+KubeletServerCertificateExpiration
 ```
