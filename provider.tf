@@ -1,0 +1,4 @@
+provider "grafana" {
+  url  = ""
+  auth = ""
+}
